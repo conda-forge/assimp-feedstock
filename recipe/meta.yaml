@@ -1,6 +1,6 @@
-{% set name = 'assimp' %}
-{% set version = '4.1.0' %}
-{% set sha256 = 'ce3589f9455c743e993fd802bdaaed72838cd3f4' %}
+{% set name = "assimp" %}
+{% set version = "5.0.1" %}
+{% set sha256 = "f148ba31dc1e7e00e59cc09b25535af997dc1998" %}
 
 package:
   name: {{ name }}
@@ -11,7 +11,7 @@ source:
   sha1: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
