@@ -9,9 +9,11 @@ package:
 source:
   url: https://github.com/assimp/assimp/archive/v{{ version }}.tar.gz
   sha1: {{ sha256 }}
+  patches:
+    - patch.diff
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -48,3 +50,4 @@ extra:
   recipe-maintainers:
     - wolfv
     - lesteve
+    - jcarpent
