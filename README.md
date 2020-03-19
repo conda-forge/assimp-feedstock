@@ -7,7 +7,9 @@ Package license: Modified BSD
 
 Feedstock license: BSD 3-Clause
 
-Summary: A library to import and export various 3d-model-formats including scene-post-processing to generate missing render data.
+Summary: A library to import and export various 3d-model-formats including
+scene-post-processing to generate missing render data.
+
 
 
 
@@ -69,6 +71,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-assimp-green.svg)](https://anaconda.org/conda-forge/assimp) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/assimp.svg)](https://anaconda.org/conda-forge/assimp) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/assimp.svg)](https://anaconda.org/conda-forge/assimp) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/assimp.svg)](https://anaconda.org/conda-forge/assimp) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pyassimp-green.svg)](https://anaconda.org/conda-forge/pyassimp) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyassimp.svg)](https://anaconda.org/conda-forge/pyassimp) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyassimp.svg)](https://anaconda.org/conda-forge/pyassimp) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyassimp.svg)](https://anaconda.org/conda-forge/pyassimp) |
 
 Installing assimp
 =================
@@ -79,10 +82,10 @@ Installing `assimp` from the `conda-forge` channel can be achieved by adding `co
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `assimp` can be installed with:
+Once the `conda-forge` channel has been enabled, `assimp, pyassimp` can be installed with:
 
 ```
-conda install assimp
+conda install assimp pyassimp
 ```
 
 It is possible to list all of the versions of `assimp` available on your platform with:
@@ -155,6 +158,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@jcarpent](https://github.com/jcarpent/)
 * [@lesteve](https://github.com/lesteve/)
 * [@wolfv](https://github.com/wolfv/)
 
