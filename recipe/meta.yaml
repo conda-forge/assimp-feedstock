@@ -18,30 +18,50 @@ build:
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
-requirements:
-  build:
-    - {{ compiler('cxx') }}
-    - {{ compiler('c') }}
-    - cmake
-    - make
-  host:
-    - boost-cpp
-    - zlib
-  run:
-    - boost-cpp
-    - zlib
-
-test:
-  commands:
-    - test -f $PREFIX/include/assimp/anim.h  # [unix]
-    - test -f $PREFIX/lib/libassimp${SHLIB_EXT}  # [unix]
-    - if exist %LIBRARY_PREFIX%\include\assimp\anim.h (exit 0) else (exit 1)  # [win]
-    - if exist %LIBRARY_PREFIX%\lib\assimp-vc140-mt.lib (exit 0) else (exit 1)  # [win]
-    - if exist %LIBRARY_PREFIX%\bin\assimp-vc140-mt.dll (exit 0) else (exit 1)  # [win]
+outputs:
+  - name: {{ name }}
+    version: {{ version }}
+    script: build_lib.sh
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - cmake
+        - make
+      host:
+        - boost-cpp
+        - zlib
+      run:
+        - boost-cpp
+        - zlib
+    test:
+      commands:
+        - test -f $PREFIX/include/assimp/anim.h  # [unix]
+        - test -f $PREFIX/lib/libassimp${SHLIB_EXT}  # [unix]
+        - if exist %LIBRARY_PREFIX%\include\assimp\anim.h (exit 0) else (exit 1)  # [win]
+        - if exist %LIBRARY_PREFIX%\lib\assimp-vc140-mt.lib (exit 0) else (exit 1)  # [win]
+        - if exist %LIBRARY_PREFIX%\bin\assimp-vc140-mt.dll (exit 0) else (exit 1)  # [win]
+  - name: pyassimp
+    version: {{ version }}
+    script: build_py.sh
+    requirements:
+      host:
+        - {{ pin_subpackage('assimp', exact=True) }}
+        - python
+        - numpy
+      run:
+        - {{ pin_subpackage('assimp', exact=True) }}
+        - python
+        - numpy
+    test:
+      imports:
+        - pyassimp
 
 about:
   home: https://assimp.org/
-  summary: A library to import and export various 3d-model-formats including scene-post-processing to generate missing render data.
+  summary: |
+    A library to import and export various 3d-model-formats including
+    scene-post-processing to generate missing render data.
   license: Modified BSD
   license_family: BSD
   license_file: LICENSE
