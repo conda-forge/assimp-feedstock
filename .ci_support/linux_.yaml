@@ -19,14 +19,7 @@ numpy:
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
-  python:
-    min_pin: x.x
-    max_pin: x.x
   zlib:
     max_pin: x.x
-python:
-- 2.7.* *_cpython
-- 3.6.* *_cpython
-- 3.7.* *_cpython
 zlib:
 - '1.2'
