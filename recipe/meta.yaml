@@ -10,7 +10,8 @@ source:
   url: https://github.com/assimp/assimp/archive/v{{ version }}.tar.gz
   sha1: {{ sha256 }}
   patches:
-    - patch.diff
+    - patch.diff  # [linux]
+    - patch_osx.diff  # [osx]
 
 build:
   number: 2
