@@ -11,3 +11,4 @@ index c659e19f..02cf59dc 100644
  
  Name: @CMAKE_PROJECT_NAME@
  Description: Import various well-known 3D model formats in an uniform manner.
+
