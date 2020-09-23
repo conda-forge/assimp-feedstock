@@ -261,3 +261,18 @@ index ab1a8d2c7b..ef90c834a6 100644
  foreach(target ${_IMPORT_CHECK_TARGETS} )
    foreach(file ${_IMPORT_CHECK_FILES_FOR_${target}} )
 
+diff --git a/code/CMakeLists.txt b/code/CMakeLists.txt
+index 67def907c0..9144b4644b 100644
+--- a/code/CMakeLists.txt
++++ b/code/CMakeLists.txt
+@@ -1213,10 +1213,6 @@ SET_TARGET_PROPERTIES( assimp PROPERTIES
+ )
+ 
+ if (APPLE)
+-  SET_TARGET_PROPERTIES( assimp PROPERTIES
+-    INSTALL_NAME_DIR "${CMAKE_INSTALL_PREFIX}/${ASSIMP_LIB_INSTALL_DIR}"
+-  )
+-
+   if (BUILD_FRAMEWORK)
+     SET_TARGET_PROPERTIES( assimp PROPERTIES
+       FRAMEWORK TRUE
