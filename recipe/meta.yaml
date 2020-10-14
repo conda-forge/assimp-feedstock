@@ -11,8 +11,8 @@ source:
   sha1: {{ sha256 }}
   patches:
     - patch.diff  # [linux]
-    - patch_osx.diff  # [osx]
     - fix_cmake_config.diff
+    - patch_osx.diff  # [osx]
 
 build:
   number: 4
