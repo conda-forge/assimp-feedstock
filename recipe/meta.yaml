@@ -11,10 +11,10 @@ source:
   sha1: {{ sha256 }}
   patches:
     - patch.diff  # [linux]
-    - patch_osx.diff  # [osx]
+    - fix_cmake_config.diff
 
 build:
-  number: 3
+  number: 4
   skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
