@@ -1,6 +1,6 @@
-cmake_minimum_required(3.12)
+cmake_minimum_required(VERSION 3.12)
 
-project(assimp_test)
+project(assimp_main)
 
 find_package(assimp REQUIRED)
 
