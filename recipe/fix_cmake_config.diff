@@ -1,19 +1,5 @@
-From e35af35e63c49d615e16c9b29f289744f79d2d2d Mon Sep 17 00:00:00 2001
-From: Silvio Traversaro <silvio.traversaro@iit.it>
-Date: Wed, 14 Oct 2020 12:19:13 +0200
-Subject: [PATCH] Backport PR 3455 to 5.0.1
-
----
- CMakeLists.txt                     | 90 ++++++++++++------------------
- cmake/assimp-plain-config.cmake.in |  9 +++
- code/CMakeLists.txt                |  9 ---
- contrib/irrXML/CMakeLists.txt      |  1 +
- contrib/zlib/CMakeLists.txt        |  1 +
- 5 files changed, 48 insertions(+), 62 deletions(-)
- create mode 100644 cmake/assimp-plain-config.cmake.in
-
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index dcafb649f5..308658ba37 100644
+index dcafb649..308658ba 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -352,67 +352,51 @@ IF (NOT TARGET uninstall)
@@ -121,27 +107,16 @@ index dcafb649f5..308658ba37 100644
  
  FIND_PACKAGE( DirectX )
  
-diff --git a/cmake/assimp-plain-config.cmake.in b/cmake/assimp-plain-config.cmake.in
-new file mode 100644
-index 0000000000..6551dcb68d
---- /dev/null
-+++ b/cmake/assimp-plain-config.cmake.in
-@@ -0,0 +1,9 @@
-+@PACKAGE_INIT@
-+
-+include("${CMAKE_CURRENT_LIST_DIR}/@TARGETS_EXPORT_NAME@.cmake")
-+
-+set(ASSIMP_ROOT_DIR ${PACKAGE_PREFIX_DIR})
-+set(ASSIMP_LIBRARIES assimp::assimp)
-+set(ASSIMP_BUILD_SHARED_LIBS @BUILD_SHARED_LIBS@)
-+get_property(ASSIMP_INCLUDE_DIRS TARGET assimp::assimp PROPERTY INTERFACE_INCLUDE_DIRECTORIES)
-+set(ASSIMP_LIBRARY_DIRS "")
 diff --git a/code/CMakeLists.txt b/code/CMakeLists.txt
-index 55538d9650..cd071da26c 100644
+index 55538d96..321acda1 100644
 --- a/code/CMakeLists.txt
 +++ b/code/CMakeLists.txt
-@@ -1222,7 +1222,6 @@ IF (RT_FOUND AND ASSIMP_IMPORTER_GLTF_USE_OPEN3DGC)
-   TARGET_LINK_LIBRARIES(assimp ${RT_LIBRARY})
+@@ -1219,10 +1219,9 @@ ENDIF(NOT HUNTER_ENABLED)
+ 
+ # Add RT-extension library for glTF importer with Open3DGC-compression.
+ IF (RT_FOUND AND ASSIMP_IMPORTER_GLTF_USE_OPEN3DGC)
+-  TARGET_LINK_LIBRARIES(assimp ${RT_LIBRARY})
++  TARGET_LINK_LIBRARIES(assimp rt)
  ENDIF (RT_FOUND AND ASSIMP_IMPORTER_GLTF_USE_OPEN3DGC)
  
 -IF(HUNTER_ENABLED)
@@ -164,7 +139,7 @@ index 55538d9650..cd071da26c 100644
  INSTALL( FILES ${COMPILER_HEADERS} DESTINATION ${ASSIMP_INCLUDE_INSTALL_DIR}/assimp/Compiler COMPONENT assimp-dev)
  
 diff --git a/contrib/irrXML/CMakeLists.txt b/contrib/irrXML/CMakeLists.txt
-index 7f58af3d85..9cccf4b08b 100644
+index 7f58af3d..9cccf4b0 100644
 --- a/contrib/irrXML/CMakeLists.txt
 +++ b/contrib/irrXML/CMakeLists.txt
 @@ -22,6 +22,7 @@ set(IRRXML_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}" CACHE INTERNAL "IrrXML_Incl
@@ -176,7 +151,7 @@ index 7f58af3d85..9cccf4b08b 100644
    ARCHIVE DESTINATION ${ASSIMP_LIB_INSTALL_DIR}
    RUNTIME DESTINATION ${ASSIMP_BIN_INSTALL_DIR}
 diff --git a/contrib/zlib/CMakeLists.txt b/contrib/zlib/CMakeLists.txt
-index 9d1fcc943e..d41d6f6623 100644
+index 9d1fcc94..d41d6f66 100644
 --- a/contrib/zlib/CMakeLists.txt
 +++ b/contrib/zlib/CMakeLists.txt
 @@ -201,6 +201,7 @@ set_target_properties(zlib PROPERTIES DEFINE_SYMBOL ZLIB_DLL)
