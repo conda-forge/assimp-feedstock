@@ -14,8 +14,7 @@ source:
     - fix_cmake_config.diff
 
 build:
-  number: 4
-  skip: true  # [win and vc<14]
+  number: 5
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
