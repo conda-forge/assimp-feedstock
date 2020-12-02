@@ -107,6 +107,21 @@ index dcafb649..308658ba 100644
  
  FIND_PACKAGE( DirectX )
  
+diff --git a/cmake/assimp-plain-config.cmake.in b/cmake/assimp-plain-config.cmake.in
+new file mode 100644
+index 00000000..6551dcb6
+--- /dev/null
++++ b/cmake/assimp-plain-config.cmake.in
+@@ -0,0 +1,9 @@
++@PACKAGE_INIT@
++
++include("${CMAKE_CURRENT_LIST_DIR}/@TARGETS_EXPORT_NAME@.cmake")
++
++set(ASSIMP_ROOT_DIR ${PACKAGE_PREFIX_DIR})
++set(ASSIMP_LIBRARIES assimp::assimp)
++set(ASSIMP_BUILD_SHARED_LIBS @BUILD_SHARED_LIBS@)
++get_property(ASSIMP_INCLUDE_DIRS TARGET assimp::assimp PROPERTY INTERFACE_INCLUDE_DIRECTORIES)
++set(ASSIMP_LIBRARY_DIRS "")
 diff --git a/code/CMakeLists.txt b/code/CMakeLists.txt
 index 55538d96..321acda1 100644
 --- a/code/CMakeLists.txt
