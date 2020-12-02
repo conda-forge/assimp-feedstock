@@ -14,7 +14,7 @@ source:
     - fix_cmake_config.diff
 
 build:
-  number: 5
+  number: 6
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
@@ -32,6 +32,10 @@ requirements:
     - zlib
 
 test:
+  requires:
+    - cmake
+  files:
+    - test
   commands:
     - test -f $PREFIX/include/assimp/anim.h  # [unix]
     - test -f $PREFIX/lib/libassimp${SHLIB_EXT}  # [unix]
