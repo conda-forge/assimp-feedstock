@@ -12,9 +12,10 @@ source:
   patches:
     - patch.diff  # [linux]
     - fix_cmake_config.diff
+    - do_not_export_debug_symbols_gcc.patch
 
 build:
-  number: 5
+  number: 6
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
