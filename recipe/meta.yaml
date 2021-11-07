@@ -36,6 +36,7 @@ test:
   requires:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - make  # [not win]
     - cmake
   files:
     - test
