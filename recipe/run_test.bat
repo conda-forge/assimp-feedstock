@@ -10,5 +10,5 @@ cmake --build . --config Release
 if errorlevel 1 exit 1
 
 :: Run example
-.\assimp_main.exe
+.\Release\assimp_main.exe
 if errorlevel 1 exit 1
