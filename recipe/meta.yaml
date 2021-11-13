@@ -33,6 +33,13 @@ requirements:
     - zlib
 
 test:
+  requires:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - make  # [not win]
+    - cmake
+  files:
+    - test
   commands:
     - test -f $PREFIX/include/assimp/anim.h  # [unix]
     - test -f $PREFIX/lib/libassimp${SHLIB_EXT}  # [unix]
