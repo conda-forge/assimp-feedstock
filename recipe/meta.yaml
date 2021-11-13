@@ -9,9 +9,6 @@ package:
 source:
   url: https://github.com/assimp/assimp/archive/v{{ version }}.tar.gz
   sha1: {{ sha256 }}
-  patches:
-    - fix_cmake_config.diff
-    - do_not_export_debug_symbols_gcc.patch
 
 build:
   number: 0
