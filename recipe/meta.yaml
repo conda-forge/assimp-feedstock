@@ -1,6 +1,6 @@
 {% set name = "assimp" %}
-{% set version = "5.0.1" %}
-{% set sha256 = "f148ba31dc1e7e00e59cc09b25535af997dc1998" %}
+{% set version = "5.1.3" %}
+{% set sha256 = "664fa2cb0cb0f48a787d9674c7c384a1aa4fb87a" %}
 
 package:
   name: {{ name }}
@@ -15,7 +15,7 @@ source:
     - do_not_export_debug_symbols_gcc.patch
 
 build:
-  number: 7
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
