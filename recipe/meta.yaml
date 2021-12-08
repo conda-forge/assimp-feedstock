@@ -1,6 +1,6 @@
 {% set name = "assimp" %}
-{% set version = "5.0.1" %}
-{% set sha256 = "f148ba31dc1e7e00e59cc09b25535af997dc1998" %}
+{% set version = "5.1.0" %}
+{% set sha256 = "437a2ba3688d44e177e7b5d0942a13875eb2a998" %}
 
 package:
   name: {{ name }}
@@ -9,13 +9,9 @@ package:
 source:
   url: https://github.com/assimp/assimp/archive/v{{ version }}.tar.gz
   sha1: {{ sha256 }}
-  patches:
-    - patch.diff  # [linux]
-    - fix_cmake_config.diff
-    - do_not_export_debug_symbols_gcc.patch
 
 build:
-  number: 7
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
