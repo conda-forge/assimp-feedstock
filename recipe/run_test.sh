@@ -4,7 +4,7 @@
 cd test
 
 # Compile example that links assimp
-cmake -DCMAKE_BUILD_TYPE=Release .
+cmake -GNinja -DCMAKE_BUILD_TYPE=Release .
 
 cmake --build . --config Release
 
