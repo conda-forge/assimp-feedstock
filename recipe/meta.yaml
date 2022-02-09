@@ -1,19 +1,19 @@
 {% set name = "assimp" %}
-{% set version = "5.2.0" %}
-{% set sha256 = "c26314da24c7725e2a88ca627a193e6ca90721f1" %}
+{% set version = "5.2.1" %}
+{% set sha256 = "6e2a7946139372a22685bd05519cfa10178244b6" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://github.com/assimp/assimp/archive/{{ version }}.tar.gz
+  url: https://github.com/assimp/assimp/archive/v{{ version }}.tar.gz
   sha1: {{ sha256 }}
   patches:
     - fix_rt_link.patch
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
