@@ -1,6 +1,6 @@
 {% set name = "assimp" %}
-{% set version = "5.2.3" %}
-{% set sha256 = "50f12c1a36aa5371a26a71d9bae5e9eeccd65739" %}
+{% set version = "5.2.4" %}
+{% set sha256 = "bcbdd56c906a6c9e61f8f7388a315767fcb4fd4e" %}
 
 package:
   name: {{ name }}
@@ -13,7 +13,7 @@ source:
     - fix_rt_link.patch
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x.x') }}
 
