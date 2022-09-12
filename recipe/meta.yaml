@@ -42,8 +42,8 @@ test:
     - test -f $PREFIX/include/assimp/anim.h  # [unix]
     - test -f $PREFIX/lib/libassimp${SHLIB_EXT}  # [unix]
     - if not exist %LIBRARY_PREFIX%\include\assimp\anim.h exit 1  # [win]
-    - if not exist %LIBRARY_PREFIX%\lib\assimp-vc141-mt.lib exit 1  # [win]
-    - if not exist %LIBRARY_PREFIX%\bin\assimp-vc141-mt.dll exit 1  # [win]
+    - if not exist %LIBRARY_PREFIX%\lib\assimp.lib exit 1  # [win]
+    - if not exist %LIBRARY_PREFIX%\bin\assimp.dll exit 1  # [win]
 
 about:
   home: https://assimp.org/
