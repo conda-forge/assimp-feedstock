@@ -9,8 +9,6 @@ package:
 source:
   url: https://github.com/assimp/assimp/archive/v{{ version }}.tar.gz
   sha1: {{ sha256 }}
-  patches:
-    - 5250.patch
 
 build:
   number: 0
