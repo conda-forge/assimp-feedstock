@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/assimp-feedstoc
 
 Home: https://assimp.org/
 
-Package license: Modified BSD
+Package license: BSD-3-Clause
 
 Summary: A library to import and export various 3d-model-formats including scene-post-processing to generate missing render data.
 
@@ -198,7 +198,6 @@ Feedstock Maintainers
 =====================
 
 * [@jcarpent](https://github.com/jcarpent/)
-* [@lesteve](https://github.com/lesteve/)
 * [@traversaro](https://github.com/traversaro/)
 * [@wolfv](https://github.com/wolfv/)
 
