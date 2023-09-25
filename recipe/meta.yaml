@@ -1,6 +1,6 @@
 {% set name = "assimp" %}
-{% set version = "5.2.5" %}
-{% set sha256 = "bf10d68c0c5417db48c327587a75c3a2a1613434" %}
+{% set version = "5.3.0" %}
+{% set sha256 = "a2f32c46b882189a34e29aaa86c210ee2806ee3b" %}
 
 package:
   name: {{ name }}
@@ -10,7 +10,7 @@ source:
   url: https://github.com/assimp/assimp/archive/v{{ version }}.tar.gz
   sha1: {{ sha256 }}
   patches:
-    - fix_rt_link.patch
+    - 5250.patch
 
 build:
   number: 0

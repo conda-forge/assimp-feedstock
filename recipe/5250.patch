@@ -1,0 +1,57 @@
+From f9d3e7015b0b709b3da5e4bc11651a484a52ac2b Mon Sep 17 00:00:00 2001
+From: Kim Kulling <kimkulling@users.noreply.github.com>
+Date: Mon, 25 Sep 2023 13:32:45 +0200
+Subject: [PATCH] Update types.h
+
+- closes https://github.com/assimp/assimp/issues/5247
+---
+ include/assimp/types.h | 28 +++++++++++-----------------
+ 1 file changed, 11 insertions(+), 17 deletions(-)
+
+diff --git a/include/assimp/types.h b/include/assimp/types.h
+index 605dc590f9..42aa0f9ebd 100644
+--- a/include/assimp/types.h
++++ b/include/assimp/types.h
+@@ -73,14 +73,8 @@ typedef uint32_t ai_uint32;
+ 
+ #ifdef __cplusplus
+ 
+-#ifdef ASSIMP_USE_HUNTER
+-#   include <utf8.h>
+-#else
+-#   include "../contrib/utf8cpp/source/utf8.h"
+-#endif
+-
+ #include <cstring>
+-#include <new> // for std::nothrow_t
++#include <new>    // for std::nothrow_t
+ #include <string> // for aiString::Set(const std::string&)
+ 
+ namespace Assimp {
+@@ -88,16 +82,16 @@ namespace Assimp {
+ namespace Intern {
+ // --------------------------------------------------------------------
+ /** @brief Internal helper class to utilize our internal new/delete
+-     *    routines for allocating object of this and derived classes.
+-     *
+-     * By doing this you can safely share class objects between Assimp
+-     * and the application - it works even over DLL boundaries. A good
+-     * example is the #IOSystem where the application allocates its custom
+-     * #IOSystem, then calls #Importer::SetIOSystem(). When the Importer
+-     * destructs, Assimp calls operator delete on the stored #IOSystem.
+-     * If it lies on a different heap than Assimp is working with,
+-     * the application is determined to crash.
+-     */
++ *    routines for allocating object of this and derived classes.
++ *
++ * By doing this you can safely share class objects between Assimp
++ * and the application - it works even over DLL boundaries. A good
++ * example is the #IOSystem where the application allocates its custom
++ * #IOSystem, then calls #Importer::SetIOSystem(). When the Importer
++ * destructs, Assimp calls operator delete on the stored #IOSystem.
++ * If it lies on a different heap than Assimp is working with,
++ * the application is determined to crash.
++ */
+ // --------------------------------------------------------------------
+ #ifndef SWIG
+ struct ASSIMP_API AllocateFromAssimpHeap {
