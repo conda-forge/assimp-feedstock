@@ -1,6 +1,6 @@
 {% set name = "assimp" %}
-{% set version = "5.4.3" %}
-{% set sha256 = "e3d875f4ac34619dd834fe2dd7a152dac7f00fce" %}
+{% set version = "6.0.2" %}
+{% set sha256 = "65257f886cd54dd1681b19d9642634540b160b7f" %}
 
 package:
   name: {{ name }}
