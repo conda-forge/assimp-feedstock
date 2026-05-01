@@ -1,5 +1,5 @@
 assimp:
-- 5.4.3
+- 6.0.3
 c_compiler:
 - vs2022
 c_stdlib:
@@ -10,8 +10,6 @@ channel_targets:
 - conda-forge main
 cxx_compiler:
 - vs2022
-libboost_devel:
-- '1.88'
 target_platform:
 - win-64
 zlib:
