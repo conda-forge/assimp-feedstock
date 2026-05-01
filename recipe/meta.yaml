@@ -23,7 +23,6 @@ requirements:
     - cmake
     - make
   host:
-    - libboost-devel
     - zlib
   run:
     - zlib
