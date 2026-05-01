@@ -1,6 +1,6 @@
 {% set name = "assimp" %}
-{% set version = "6.0.4" %}
-{% set sha256 = "297c3d0d0a7a09c640215abd8bda760dce82f027" %}
+{% set version = "6.0.5" %}
+{% set sha256 = "7a71f3e2f01ac7e0d01cc62cfcda7ff651466401" %}
 
 package:
   name: {{ name }}
@@ -9,9 +9,11 @@ package:
 source:
   url: https://github.com/assimp/assimp/archive/v{{ version }}.tar.gz
   sha1: {{ sha256 }}
+  patches:
+    - 6627.patch
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x.x') }}
 
@@ -23,7 +25,6 @@ requirements:
     - cmake
     - make
   host:
-    - libboost-devel
     - zlib
   run:
     - zlib
