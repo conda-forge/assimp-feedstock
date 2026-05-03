@@ -13,7 +13,7 @@ source:
     - 6627.patch
 
 build:
-  number: 
+  number: 1
   run_exports:
     # On each new release of assimp, always check for possible ABI breaks and the value of ASSIMP_SOVERSION in CMake,
     # to ensure that the assumption of ABI compat for major version is respected
