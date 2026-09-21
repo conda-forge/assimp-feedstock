@@ -11,6 +11,6 @@ channel_targets:
 cxx_compiler:
 - vs2022
 target_platform:
-- win-64
+- win-arm64
 zlib:
 - '1'
