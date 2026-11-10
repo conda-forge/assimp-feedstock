@@ -1,6 +1,6 @@
 {% set name = "assimp" %}
-{% set version = "6.0.5" %}
-{% set sha256 = "7a71f3e2f01ac7e0d01cc62cfcda7ff651466401" %}
+{% set version = "6.0.6" %}
+{% set sha256 = "9ee1f969f27593ec5806608185114f3b5625289b" %}
 
 package:
   name: {{ name }}
@@ -13,7 +13,7 @@ source:
     - 6627.patch
 
 build:
-  number: 2
+  number: 0
   run_exports:
     # On each new release of assimp, always check for possible ABI breaks and the value of ASSIMP_SOVERSION in CMake,
     # to ensure that the assumption of ABI compat for major version is respected
